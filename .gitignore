@@ -4,6 +4,9 @@ server/node_modules/
 .env
 dist/
 
+# Documentación
+docs/
+
 # Archivos generados por agentes/IA
 AGENTS.md
 **/AGENTS.md

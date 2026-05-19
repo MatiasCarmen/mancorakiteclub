@@ -9,8 +9,7 @@ import Stay from '../sections/home/Stay.jsx'
 import Testimonials from '../sections/home/Testimonials.jsx'
 import Team from '../sections/home/Team.jsx'
 import Trips from '../sections/home/Trips.jsx'
-import WeatherSection from '../sections/home/WeatherSection.jsx'
-import WindWidget from '../components/WindWidget.jsx'
+import CommunityGallery from '../sections/home/CommunityGallery.jsx'
 
 function HomePage() {
   const { currentLang } = useI18n()
@@ -27,8 +26,7 @@ function HomePage() {
         hreflang={{ en: '/home', es: '/esp/home', fr: '/fr/home', default: '/home' }}
       />
       <Hero />
-      <WeatherSection />
-      <WindWidget />
+      <CommunityGallery />
       <OurStory />
       <Team />
       <Trips />
