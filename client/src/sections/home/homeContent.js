@@ -1,7 +1,9 @@
-import { homeImages, remoteImages } from '../../config/images.js'
+import { heroImages, homeImages, remoteImages } from '../../config/images.js'
 import { buildWhatsAppUrl, defaultInquiryMessage } from '../../lib/whatsapp.js'
 
-const { actionDesktop, actionMobile, waveDesktop, waveMobile, lifestyle, beach } = homeImages.hero
+const { actionDesktop, actionMobile, waveDesktop, waveMobile, lifestyle } = homeImages.hero
+const wingDesktop = heroImages.wing.desktop[0]
+const wingMobile = heroImages.wing.mobile[0]
 export const WHATSAPP_LINK = buildWhatsAppUrl(defaultInquiryMessage())
 
 export const HOME_HERO_SLIDES = [
@@ -24,10 +26,10 @@ export const HOME_HERO_SLIDES = [
     imageClassName: 'object-[56%_center] md:object-center',
   },
   {
-    desktopSrc: beach,
-    mobileSrc: beach,
-    alt: 'Beachside kite setup with ocean wind in Mancora',
-    imageClassName: 'object-[62%_center] md:object-center',
+    desktopSrc: wingDesktop,
+    mobileSrc: wingMobile,
+    alt: 'Wingfoil rider gliding over the ocean in Mancora',
+    imageClassName: 'object-[50%_center] md:object-center',
   },
 ]
 

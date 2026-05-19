@@ -57,8 +57,13 @@ const STAY_TAGS = ['Boutique Kite House', 'Beachfront Base', 'Slow Luxury']
 
 function Stay() {
   return (
-    <section id="stay" className="relative overflow-hidden bg-[#0A1113] px-5 py-20 text-[#F4F2EA] sm:px-8 sm:py-24 lg:px-12 lg:py-32">
-      <div className="mx-auto max-w-7xl">
+    <section id="stay" className="relative overflow-hidden bg-[#0e1b17] px-5 py-20 text-[#F4F2EA] sm:px-8 sm:py-24 lg:px-12 lg:py-32">
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
+        <div className="absolute left-1/4 top-0 h-[500px] w-[500px] rounded-full bg-[#b7e28a]/5 blur-[120px] mix-blend-screen" />
+        <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-[#b7e28a]/5 blur-[100px] mix-blend-screen" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
           <div className="max-w-xl">
             <span className="text-sm font-bold uppercase tracking-normal text-[#BFA36A]">

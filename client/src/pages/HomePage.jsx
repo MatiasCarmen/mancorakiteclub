@@ -10,6 +10,7 @@ import Testimonials from '../sections/home/Testimonials.jsx'
 import Team from '../sections/home/Team.jsx'
 import Trips from '../sections/home/Trips.jsx'
 import CommunityGallery from '../sections/home/CommunityGallery.jsx'
+import ContactPreview from '../sections/home/ContactPreview.jsx'
 
 function HomePage() {
   const { currentLang } = useI18n()
@@ -30,9 +31,10 @@ function HomePage() {
       <OurStory />
       <Team />
       <Trips />
-      <Stay />
       <BuilderPreview />
       <Testimonials />
+      <Stay />
+      <ContactPreview />
     </>
   )
 }
