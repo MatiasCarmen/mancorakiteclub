@@ -21,6 +21,7 @@ function BuildPage() {
   const {
     actividades, toggleActividad, setActividadHoras,
     noches, setNoches,
+    personas, setPersonas,
     extras, toggleExtra,
     extrasQty, setExtraQty,
     paso, setPaso,
@@ -38,7 +39,7 @@ function BuildPage() {
   }
 
   const generarLinkWhatsApp = () => {
-    const total = calcularPrecio(actividades, noches, extras, extrasQty)
+    const total = calcularPrecio(actividades, noches, extras, extrasQty, personas)
     const listActividades = Object.entries(actividades)
       .map(([id, hrs]) => `- ${id}: ${hrs}h`)
       .join('\n')
@@ -50,6 +51,7 @@ function BuildPage() {
 - Actividades:
 ${listActividades || '  Ninguna'}
 - Noches: ${noches}
+- Personas: ${personas}
 ${listExtras ? `- Extras:\n${listExtras}` : ''}
 ---
 Total estimado: $${total} USD
@@ -59,7 +61,7 @@ Email: ${datosUsuario.email}`
     return `https://wa.me/51996557689?text=${encodeURIComponent(mensaje)}`
   }
 
-  const precioTotal = calcularPrecio(actividades, noches, extras, extrasQty)
+  const precioTotal = calcularPrecio(actividades, noches, extras, extrasQty, personas)
 
   return (
     <div className="min-h-screen bg-[#0e1b17]">
@@ -130,7 +132,7 @@ Email: ${datosUsuario.email}`
               transition={stepTransition}
             >
               {paso === 1 && <PasoActividad actividades={actividades} toggleActividad={toggleActividad} setActividadHoras={setActividadHoras} />}
-              {paso === 2 && <PasoNoches noches={noches} setNoches={setNoches} />}
+              {paso === 2 && <PasoNoches noches={noches} setNoches={setNoches} personas={personas} setPersonas={setPersonas} />}
               {paso === 3 && (
                 <PasoRental
                   extras={extras}
@@ -151,6 +153,7 @@ Email: ${datosUsuario.email}`
                 <PasoResumen
                   actividades={actividades}
                   noches={noches}
+                  personas={personas}
                   extras={extras}
                   extrasQty={extrasQty}
                   datosUsuario={datosUsuario}

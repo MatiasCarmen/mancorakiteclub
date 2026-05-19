@@ -29,10 +29,10 @@ export const CLASSES_INTRO = {
 =========================== */
 export const PRIVATE_CLASSES = [
   {
-    id: "intro",
-    title: "Introductory Class",
+    id: "discovery",
+    title: "Discovery",
     duration: "1 day | 2 hours/day",
-    price: "$120 / person",
+    price: "$120 USD / person",
     image: introClassImg,
     hoverImage: introClassImgHover,
     features: [
@@ -43,10 +43,10 @@ export const PRIVATE_CLASSES = [
     ]
   },
   {
-    id: "fundamental",
-    title: "Fundamental Class",
+    id: "beginner",
+    title: "Beginner",
     duration: "3 days | 2 hours/day",
-    price: "$350 / person",
+    price: "$350 USD / person",
     image: fundamentalClassImg,
     hoverImage: advanceClassImg,
     features: [
@@ -57,10 +57,10 @@ export const PRIVATE_CLASSES = [
     ]
   },
   {
-    id: "advance",
-    title: "Advance Class",
+    id: "intensive",
+    title: "Intensive",
     duration: "3 days | 3 hours/day",
-    price: "$500 / person",
+    price: "$500 USD / person",
     image: advanceClassImg,
     hoverImage: masterClassImg,
     features: [
@@ -71,16 +71,79 @@ export const PRIVATE_CLASSES = [
     ]
   },
   {
-    id: "master",
-    title: "Comprehensive Masterclass",
+    id: "full-progression",
+    title: "Full Progression",
     duration: "5 days | Flexible schedule",
-    price: "$600 / person",
+    price: "$600 USD / person",
     image: masterClassImg,
     hoverImage: introClassImg,
     featured: true,
     features: [
       "Complete program",
       "Detailed technique analysis",
+      "Performance tracking",
+      "Final evaluation session"
+    ]
+  }
+]
+
+/* ===========================
+   SEMI-PRIVATE CLASSES (PRICING)
+=========================== */
+export const SEMI_PRIVATE_CLASSES = [
+  {
+    id: "discovery-semi",
+    title: "Discovery",
+    duration: "1 day | 2 hours/day",
+    price: "$90 USD / person",
+    image: introClassImg,
+    hoverImage: introClassImgHover,
+    features: [
+      "Ideal for first experience",
+      "1 instructor shared between 2 students",
+      "All premium equipment included",
+      "Support via walkie-talkie"
+    ]
+  },
+  {
+    id: "beginner-semi",
+    title: "Beginner",
+    duration: "3 days | 2 hours/day",
+    price: "$250 USD / person",
+    image: fundamentalClassImg,
+    hoverImage: advanceClassImg,
+    features: [
+      "Designed by old instructors",
+      "1 instructor shared between 2 students",
+      "Premium equipment included",
+      "Professional photo during class"
+    ]
+  },
+  {
+    id: "intensive-semi",
+    title: "Intensive",
+    duration: "3 days | 3 hours/day",
+    price: "$350 USD / person",
+    image: advanceClassImg,
+    hoverImage: masterClassImg,
+    features: [
+      "Focused on advanced technique",
+      "1 instructor shared between 2 students",
+      "Video recording & analysis",
+      "Optional drone shots"
+    ]
+  },
+  {
+    id: "full-progression-semi",
+    title: "Full Progression",
+    duration: "5 days | Flexible schedule",
+    price: "$450 USD / person",
+    image: masterClassImg,
+    hoverImage: introClassImg,
+    featured: true,
+    features: [
+      "Complete program",
+      "1 instructor shared between 2 students",
       "Performance tracking",
       "Final evaluation session"
     ]

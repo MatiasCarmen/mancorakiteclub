@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { PRIVATE_CLASSES } from "./classesData"
+import { PRIVATE_CLASSES, SEMI_PRIVATE_CLASSES } from "./classesData"
 import { buildClassInquiryMessage, buildWhatsAppUrl } from "../../lib/whatsapp"
 
 function ClassesSteps() {

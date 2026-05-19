@@ -4,9 +4,9 @@ import { useI18n } from '../../app/providers/i18nContext.js'
 import { calcularPrecio } from './buildData.js'
 import { useAnimatedNumber, StepHeading } from './BuildUI.jsx'
 
-export default function PasoResumen({ actividades, noches, extras, extrasQty, datosUsuario, setDatosUsuario, generarLinkWhatsApp }) {
+export default function PasoResumen({ actividades, noches, personas, extras, extrasQty, datosUsuario, setDatosUsuario, generarLinkWhatsApp }) {
   const { t } = useI18n()
-  const precioTotal = calcularPrecio(actividades, noches, extras, extrasQty)
+  const precioTotal = calcularPrecio(actividades, noches, extras, extrasQty, personas)
   const precioAnimado = useAnimatedNumber(precioTotal)
   const canSend = datosUsuario.nombre.trim() !== '' && datosUsuario.email.trim() !== ''
   const [shakeKey, setShakeKey] = useState(0)

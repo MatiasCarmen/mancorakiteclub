@@ -24,8 +24,8 @@ function StayLocation() {
         >
           <div style={{ height: "400px" }} className="w-full">
             <iframe
-              title="Mancora location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.5971273445416!2d-81.0530883!3d-4.1020847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x903691315a6adf53%3A0xb3a5b8c9d2e1f0a3!2sMancora%2C%20Peru!5e0!3m2!1sen!2spe!4v1778131649396"
+              title="Bali Lodge - Máncora Kite Club"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.8!2d-81.0531!3d-4.1021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNicwNy42IlMgODHCsDAzJzExLjIiVw!5e0!3m2!1sen!2spe!4v1778131649396"
               width="100%"
               height="100%"
               loading="lazy"

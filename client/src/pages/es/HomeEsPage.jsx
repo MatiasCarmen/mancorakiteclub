@@ -3,7 +3,6 @@ import CTA from '../../sections/home/CTA.jsx'
 import Gallery from '../../sections/home/Gallery.jsx'
 import HeroVideo from '../../sections/home/HeroVideo.jsx'
 import Highlights from '../../sections/home/Highlights.jsx'
-import Packages from '../../sections/home/Packages.jsx'
 import Testimonials from '../../sections/home/Testimonials.jsx'
 
 function HomeEsPage() {
@@ -17,7 +16,6 @@ function HomeEsPage() {
       />
       <HeroVideo />
       <Highlights />
-      <Packages />
       <Gallery />
       <Testimonials />
       <CTA />

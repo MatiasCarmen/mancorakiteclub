@@ -13,6 +13,7 @@ const initialState = {
   paso: INITIAL_STEP,
   actividades: {},
   noches: 0,
+  personas: 1,
   extras: [],
   extrasQty: {},
   datosUsuario: {
@@ -44,6 +45,8 @@ export const useTripBuilderStore = create((set, get) => ({
     })),
 
   setNoches: (noches) => set({ noches }),
+
+  setPersonas: (personas) => set({ personas: Math.max(1, Number(personas) || 1) }),
 
   toggleExtra: (extra) =>
     set((state) => {
@@ -99,7 +102,7 @@ export const useTripBuilderStore = create((set, get) => ({
     set({ paso: Math.max(MIN_STEP, Math.min(MAX_STEP, paso)) }),
 
   generarLinkWhatsApp: () => {
-    const { actividades, noches, extras, extrasQty, datosUsuario } = get()
+    const { actividades, noches, personas, extras, extrasQty, datosUsuario } = get()
 
     const actividadesDetalle = Object.entries(actividades)
       .map(([id, hrs]) => `${id}: ${hrs}h`)
@@ -116,6 +119,7 @@ export const useTripBuilderStore = create((set, get) => ({
 Quiero armar mi paquete:
 🏋️ Actividades: ${actividadesDetalle || 'No seleccionada'}
 🌙 Noches: ${noches}
+👥 Personas: ${personas}
 ✨ Extras: ${extrasDetalle || 'Sin extras'}
 Mi nombre es: ${datosUsuario.nombre || 'No indicado'}
 Email: ${datosUsuario.email || 'No indicado'}`

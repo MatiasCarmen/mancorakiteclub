@@ -6,7 +6,6 @@ import NotFoundPage from '../pages/NotFoundPage.jsx'
 
 const HomePage = lazy(() => import('../pages/HomePage.jsx'))
 const TripsPage = lazy(() => import('../pages/TripsPage.jsx'))
-const TripDetailPage = lazy(() => import('../pages/trips/TripDetailPage.jsx'))
 const ClassesPage = lazy(() => import('../pages/ClassesPage.jsx'))
 const StayPage = lazy(() => import('../pages/StayPage.jsx'))
 const BuildPage = lazy(() => import('../pages/BuildPage.jsx'))
@@ -20,7 +19,7 @@ const BlogPostPage = lazy(() => import('../pages/blog/BlogPostPage.jsx'))
 const SITE_ROUTES = [
   { path: 'home', element: <HomePage /> },
   { path: 'trips', element: <TripsPage /> },
-  { path: 'trips/:slug', element: <TripDetailPage /> },
+  { path: 'trips/:slug', element: <Navigate to="/build" replace /> },
   { path: 'classes', element: <ClassesPage /> },
   { path: 'stay', element: <StayPage /> },
   { path: 'build', element: <BuildPage /> },

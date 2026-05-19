@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { useI18n } from '../../app/providers/i18nContext.js'
-import { NOCHES_OPTIONS, NOCHES_IMAGENES, NOCHES_COPY_KEYS, PRECIO_NOCHE } from './buildData.js'
+import { NOCHES_OPTIONS, NOCHES_IMAGENES, NOCHES_COPY_KEYS, getPrecioNoche } from './buildData.js'
 import { StepHeading, staggerContainer, staggerItem } from './BuildUI.jsx'
 
-function NightCard({ n, i, selected, onClick }) {
+function NightCard({ n, i, selected, onClick, precioNoche }) {
   const { t } = useI18n()
   return (
     <motion.button
@@ -43,7 +43,7 @@ function NightCard({ n, i, selected, onClick }) {
               <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">{t('build.nights')}</span>
             </div>
             <span className={`rounded-md px-2 py-1 text-[11px] font-black ${selected ? 'bg-[#b7e28a] text-black' : 'bg-white/10 text-white'}`}>
-              ${n * PRECIO_NOCHE}
+              ${n * precioNoche}
             </span>
           </div>
         </div>
@@ -52,11 +52,35 @@ function NightCard({ n, i, selected, onClick }) {
   )
 }
 
-export default function PasoNoches({ noches, setNoches }) {
+export default function PasoNoches({ noches, setNoches, personas, setPersonas }) {
   const { t } = useI18n()
+  const precioNoche = getPrecioNoche(personas)
   return (
     <div>
       <StepHeading index={2} title={t('build.howManyNights')} subtitle={t('build.howManyNightsSub')} />
+
+      {/* Guest selector */}
+      <div className="mb-6 flex items-center gap-4">
+        <span className="text-xs font-bold uppercase tracking-widest text-white/50">{t('build.guests') || 'Guests'}</span>
+        <div className="flex gap-2">
+          {[1, 2].map((p) => (
+            <button
+              key={p}
+              type="button"
+              onClick={() => setPersonas(p)}
+              className={`rounded-lg px-4 py-2 text-sm font-bold transition ${
+                personas === p
+                  ? 'bg-[#b7e28a] text-black'
+                  : 'bg-white/5 text-white/60 hover:bg-white/10'
+              }`}
+            >
+              {p} {p === 1 ? (t('build.person') || 'person') : (t('build.people') || 'people')}
+            </button>
+          ))}
+        </div>
+        <span className="text-xs text-white/30">${precioNoche} USD / {t('build.night') || 'night'}</span>
+      </div>
+
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -64,12 +88,12 @@ export default function PasoNoches({ noches, setNoches }) {
         className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5"
       >
         {NOCHES_OPTIONS.map((n, i) => (
-          <NightCard key={n} n={n} i={i} selected={noches === n} onClick={() => setNoches(n)} />
+          <NightCard key={n} n={n} i={i} selected={noches === n} onClick={() => setNoches(n)} precioNoche={precioNoche} />
         ))}
       </motion.div>
       <div className="mt-5 flex items-center justify-end gap-2">
         <div className="h-px flex-1 bg-white/6" />
-        <p className="text-sm font-bold text-[#b7e28a]">${noches * PRECIO_NOCHE} USD</p>
+        <p className="text-sm font-bold text-[#b7e28a]">${noches * precioNoche} USD</p>
         <span className="text-xs text-white/30">{t('build.accommodation')}</span>
       </div>
     </div>

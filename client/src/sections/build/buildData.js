@@ -80,7 +80,11 @@ export const EXTRAS_CATEGORIES = [
   { id: 'logistics', labelKey: 'build.logistics' },
 ]
 
-export const PRECIO_NOCHE = 50
+export const PRECIO_NOCHE_1 = 50
+export const PRECIO_NOCHE_2 = 80
+export function getPrecioNoche(personas) {
+  return personas >= 2 ? PRECIO_NOCHE_2 : PRECIO_NOCHE_1
+}
 export const PRECIO_HORA_MAP = {
   Kitesurf: 60,
   Wingfoil: 60,
@@ -92,11 +96,12 @@ export const RENTAL_OPTIONS = EXTRAS_OPTIONS.filter((e) => e.category === 'gear'
 export const NON_RENTAL_EXTRAS = EXTRAS_OPTIONS.filter((e) => e.category !== 'gear')
 export const NON_RENTAL_CATEGORIES = EXTRAS_CATEGORIES.filter((c) => c.id !== 'gear')
 
-export function calcularPrecio(actividades, noches, extras, extrasQty) {
+export function calcularPrecio(actividades, noches, extras, extrasQty, personas = 1) {
   const actividadesTotal = Object.entries(actividades).reduce((sum, [id, hrs]) => {
     return sum + (PRECIO_HORA_MAP[id] || 60) * hrs
   }, 0)
-  const base = noches * PRECIO_NOCHE + actividadesTotal
+  const precioNoche = getPrecioNoche(personas)
+  const base = noches * precioNoche + actividadesTotal
   const extrasTotal = extras.reduce((sum, extraId) => {
     const found = EXTRAS_OPTIONS.find((e) => e.id === extraId)
     if (!found) return sum
