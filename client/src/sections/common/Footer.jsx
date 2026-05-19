@@ -71,71 +71,71 @@ function Footer() {
           </div>
 
           <div className="flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:px-2 lg:text-left xl:pl-8">
-            <h4 className="mb-5 text-base font-bold text-white">Explore</h4>
+            <h4 className="mb-5 text-base font-bold text-white">{t('footer.exploreLabel')}</h4>
             <ul className="space-y-1.5 text-sm text-white">
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Our Trips
+                  {t('footer.tripsLink')}
                 </a>
               </li>
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Accommodation
+                  {t('footer.accommodationLink')}
                 </a>
               </li>
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Kite Lessons
+                  {t('footer.kiteLessons')}
                 </a>
               </li>
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Packages
+                  {t('footer.packages')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:text-left">
-            <h4 className="mb-5 text-base font-bold text-white">Company</h4>
+            <h4 className="mb-5 text-base font-bold text-white">{t('footer.companyLabel')}</h4>
             <ul className="space-y-1.5 text-sm text-white">
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  About Us
+                  {t('footer.aboutUs')}
                 </a>
               </li>
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Our Instructors
+                  {t('footer.instructors')}
                 </a>
               </li>
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Contact
+                  {t('footer.contactLink')}
                 </a>
               </li>
               <li>
                 <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
-                  Privacy Policy
+                  {t('footer.privacy')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div className="flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:text-left">
-            <h4 className="mb-5 text-base font-bold text-white">Contact</h4>
+            <h4 className="mb-5 text-base font-bold text-white">{t('footer.contactLink')}</h4>
             <ul className="space-y-3 text-sm leading-7 text-white">
               <li className="flex items-start justify-center gap-3 text-center lg:justify-start lg:text-left">
                 <FaMapMarkerAlt className="mt-1 shrink-0 text-white" />
-                <span className="max-w-xs break-words">Mancora Beach, Piura, Peru</span>
+                <span className="max-w-xs break-words">{t('footer.address')}</span>
               </li>
               <li className="flex items-start justify-center gap-3 text-center lg:justify-start lg:text-left">
                 <FaEnvelope className="mt-1 shrink-0 text-white" />
-                <span className="max-w-xs break-all sm:break-words">kiteclub.mancora@gmail.com</span>
+                <span className="max-w-xs break-all sm:break-words">{t('footer.email')}</span>
               </li>
               <li className="flex items-start justify-center gap-3 text-center lg:justify-start lg:text-left">
                 <FaWhatsapp className="mt-1 shrink-0 text-white" />
-                <span className="max-w-xs break-words">+51 996 557 689</span>
+                <span className="max-w-xs break-words">{t('footer.phone')}</span>
               </li>
             </ul>
           </div>
@@ -149,7 +149,7 @@ function Footer() {
 
         <div className="mt-8 pt-8 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-white">
-            Official Partners
+            {t('footer.partners')}
           </p>
 
           <div className="mt-6 grid grid-cols-2 items-center justify-items-center gap-x-6 gap-y-6 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-10 xl:gap-x-14">

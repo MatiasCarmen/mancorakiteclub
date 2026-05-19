@@ -26,13 +26,6 @@ const MotionLink = motion.create(Link)
 const getTripPath = (slug) =>
   trips.find((trip) => trip.slug === slug)?.path || '/trips'
 
-const TRIP_SELECT_OPTIONS = [
-  { label: 'All Trips', path: '/trips' },
-  { label: 'Kitesurf Trips', path: getTripPath('first-fly') },
-  { label: 'Wingfoil Trips', path: getTripPath('ride-the-coast') },
-  { label: 'Surf / SUP Experiences', path: getTripPath('solo-surf') },
-]
-
 function Header() {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useUIStore()
 
@@ -53,6 +46,13 @@ function Header() {
     ...item,
     to: localizePath(item.to, currentLang),
   }))
+
+  const TRIP_SELECT_OPTIONS = [
+    { labelKey: 'trips.dropdown.allTrips', path: '/trips' },
+    { labelKey: 'trips.dropdown.kitesurfTrips', path: getTripPath('first-fly') },
+    { labelKey: 'trips.dropdown.wingfoilTrips', path: getTripPath('ride-the-coast') },
+    { labelKey: 'trips.dropdown.surfSup', path: getTripPath('solo-surf') },
+  ]
 
   const homePath = localizePath('/home', currentLang)
   const whatsappUrl = buildWhatsAppUrl(defaultInquiryMessage('Header'))
@@ -249,10 +249,10 @@ function Header() {
                         <div className="overflow-hidden rounded-3xl border border-[#F4F2EA]/15 bg-[#071012]/95 p-2 shadow-[0_28px_80px_rgba(0,0,0,0.48)] backdrop-blur-2xl">
                           <div className="px-4 pb-3 pt-3">
                             <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#38E0C8]">
-                              Choose experience
+                              {t('trips.dropdown.chooseExperience')}
                             </p>
                             <p className="mt-1 text-xs text-[#F4F2EA]/55">
-                              Select your next ocean route
+                              {t('trips.dropdown.selectRoute')}
                             </p>
                           </div>
 
@@ -272,10 +272,10 @@ function Header() {
 
                                 <span className="flex flex-col">
                                   <span className="text-sm font-semibold text-[#F4F2EA] transition-colors duration-300 group-hover/item:text-[#38E0C8]">
-                                    {option.label}
+                                    {t(option.labelKey)}
                                   </span>
                                   <span className="mt-0.5 text-[11px] text-[#F4F2EA]/45">
-                                    Open trip page
+                                    {t('trips.dropdown.openTrip')}
                                   </span>
                                 </span>
                               </button>

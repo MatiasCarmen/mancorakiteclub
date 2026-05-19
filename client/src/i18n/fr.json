@@ -33,7 +33,19 @@
     "tagline": "École de Kitesurf à Máncora, Pérou",
     "rights": "© Tous droits réservés | Máncora Kite Club",
     "phone": "+51 996 557 689",
-    "email": "kiteclub.mancora@gmail.com"
+    "email": "kiteclub.mancora@gmail.com",
+    "exploreLabel": "Explorer",
+    "tripsLink": "Nos Voyages",
+    "accommodationLink": "Hébergement",
+    "kiteLessons": "Cours de Kite",
+    "packages": "Forfaits",
+    "companyLabel": "À Propos",
+    "aboutUs": "À Propos de Nous",
+    "instructors": "Nos Instructeurs",
+    "contactLink": "Contact",
+    "privacy": "Politique de Confidentialité",
+    "partners": "Partenaires Officiels",
+    "address": "Plage de Máncora, Piura, Pérou"
   },
   "common": {
     "learnMore": "En savoir plus",
@@ -57,7 +69,24 @@
     "threeDays": "Voyage de Kitesurf 3 Jours",
     "threeDaysDesc": "Idéal pour ceux qui souhaitent progresser rapidement et découvrir de nouvelles plages",
     "sevenDays": "Expérience de Kitesurf 7 Jours",
-    "sevenDaysDesc": "Le forfait complet pour vivre une semaine épique de kitesurf, améliorer votre niveau et ramener des souvenirs uniques."
+    "sevenDaysDesc": "Le forfait complet pour vivre une semaine épique de kitesurf, améliorer votre niveau et ramener des souvenirs uniques.",
+    "heroEyebrow": "Mancora Kite Club",
+    "heroTitle": "Nos Voyages",
+    "heroSubtitle": "Choisissez votre route entre vent, vagues, coaching, surf et la côte nord du Pérou.",
+    "viewDetails": "Voir les Détails",
+    "ctaEyebrow": "Constructeur de Voyage",
+    "ctaTitle": "Construisez le voyage adapté à votre vent, niveau et temps.",
+    "ctaDesc": "Créez votre propre parcours à Máncora avec coaching, hébergement, activités supplémentaires et le meilleur rythme pour votre séjour.",
+    "ctaButton": "Construisez Votre Voyage",
+    "dropdown": {
+      "chooseExperience": "Choisir l'expérience",
+      "selectRoute": "Sélectionnez votre prochaine route océanique",
+      "allTrips": "Tous les Voyages",
+      "kitesurfTrips": "Voyages de Kitesurf",
+      "wingfoilTrips": "Voyages de Wingfoil",
+      "surfSup": "Surf / SUP",
+      "openTrip": "Ouvrir la page du voyage"
+    }
   },
   "classes": {
     "title": "Vos Cours Idéaux",
@@ -79,7 +108,19 @@
     "message": "Message",
     "send": "Envoyer le Message",
     "whatsapp": "Contactez-nous sur WhatsApp",
-    "phone": "+51 996 557 689"
+    "phone": "+51 996 557 689",
+    "heroEyebrow": "Máncora Kite Club",
+    "heroTitle": "Contactez-nous",
+    "heroSubtitle": "Écrivez-nous pour la disponibilité, les tarifs et les conseils de voyage",
+    "getInTouch": "Prenez contact",
+    "reachFast": "Contactez-nous par n'importe quel canal — nous répondons vite.",
+    "sendMessage": "Envoyez-nous un message",
+    "loveToHear": "Nous serions ravis d'avoir de vos nouvelles",
+    "yourName": "Votre nom",
+    "yourMessage": "Votre message",
+    "namePlaceholder": "Jean Dupont",
+    "messagePlaceholder": "Je souhaiterais savoir...",
+    "sendWhatsApp": "Envoyer via WhatsApp"
   },
    "seo": {
     "homeTitle": "Mancora Kite Club",

@@ -5,8 +5,11 @@ import FullscreenHero from '../components/ui/FullscreenHero.jsx'
 import { createPresetHeroSlides } from '../lib/fullscreenHeroSlides.js'
 import { buildWhatsAppUrl } from '../lib/whatsapp.js'
 import SEO from '../components/SEO.jsx'
+import { useI18n } from '../app/providers/i18nContext.js'
+import { localizePath } from '../lib/routes.js'
 
 const { formDecorImg } = componentImages["pages/ContactPage.jsx"]
+
 const contacts = [
   {
     label: 'WhatsApp',
@@ -72,6 +75,7 @@ const contacts = [
 ]
 
 function ContactPage() {
+  const { t, currentLang } = useI18n()
   const [formName, setFormName] = useState('')
   const [formMessage, setFormMessage] = useState('')
 
@@ -89,17 +93,17 @@ function ContactPage() {
         descKey="seo.contactDesc"
         titleFallback="Contact | Mancora Kite Club"
         descFallback="Contact Máncora Kite Club for kitesurfing, wingfoil, and surf trips, classes, accommodation, and rentals. Get quick answers via WhatsApp. Reach out now."
-        canonicalPath="/contact"
-        hreflang={{ en: '/contact', es: '/esp/contacto', default: '/' }}
+        canonicalPath={localizePath('/contact', currentLang)}
+        hreflang={{ en: '/contact', es: '/esp/contact', fr: '/fr/contact', default: '/contact' }}
       />
 
       <div className="overflow-hidden bg-white dark:bg-surface-dark">
         {/* HERO */}
         <FullscreenHero
           as="section"
-          eyebrow="Máncora Kite Club"
-          title="Contact | Mancora Kite club"
-          subtitle="Reach us for availibility, pricing and trip guidance"
+          eyebrow={t('contact.heroEyebrow')}
+          title={t('contact.heroTitle')}
+          subtitle={t('contact.heroSubtitle')}
           slides={createPresetHeroSlides('community', {
             alt: 'Contact Mancora Kite Club',
             imageClassName: 'object-[52%_center] md:object-center',
@@ -116,13 +120,13 @@ function ContactPage() {
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-surface-dark sm:p-10 lg:p-12"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-                Get in touch
+                {t('contact.getInTouch')}
               </p>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-slate-950 dark:text-white sm:text-4xl">
                 Kite Club Máncora
               </h2>
               <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                Reach us through any channel — we reply fast.
+                {t('contact.reachFast')}
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -164,33 +168,33 @@ function ContactPage() {
               {/* FORM */}
               <div className="p-8 sm:p-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
-                  Send us a message
+                  {t('contact.sendMessage')}
                 </p>
                 <h3 className="mt-3 font-display text-2xl font-bold text-slate-950 dark:text-white">
-                  We'd love to hear from you
+                  {t('contact.loveToHear')}
                 </h3>
 
                 <form onSubmit={handleSendWhatsApp} className="mt-6 space-y-4">
                   <div>
                     <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                      Your name
+                      {t('contact.yourName')}
                     </label>
                     <input
                       type="text"
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
-                      placeholder="John Doe"
+                      placeholder={t('contact.namePlaceholder')}
                       className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-white/30"
                     />
                   </div>
                   <div>
                     <label className="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                      Your message
+                      {t('contact.yourMessage')}
                     </label>
                     <textarea
                       value={formMessage}
                       onChange={(e) => setFormMessage(e.target.value)}
-                      placeholder="I'd like to know about..."
+                      placeholder={t('contact.messagePlaceholder')}
                       rows={4}
                       className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-white/30"
                     />
@@ -204,7 +208,7 @@ function ContactPage() {
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                       <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.856L.057 23.571a.75.75 0 0 0 .943.905l5.915-1.55A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.75 9.75 0 0 1-4.96-1.356l-.355-.213-3.668.962.978-3.567-.232-.368A9.75 9.75 0 1 1 12 21.75z"/>
                     </svg>
-                    Send via WhatsApp
+                    {t('contact.sendWhatsApp')}
                   </button>
                 </form>
               </div>
