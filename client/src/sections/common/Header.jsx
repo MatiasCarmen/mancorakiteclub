@@ -1,36 +1,31 @@
 import { brandImages } from '../../config/images.js'
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { FaBars, FaChevronDown, FaTimes, FaWhatsapp } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useI18n } from '../../app/providers/i18nContext.js'
 import { buildWhatsAppUrl, defaultInquiryMessage } from '../../lib/whatsapp.js'
 import { localizePath } from '../../lib/routes.js'
 import { useUIStore } from '../../store/useUIStore.js'
-import { trips } from '../../content/trips.js'
 
 const clubLogo = brandImages.logoComplete
 
 const BASE_NAV_ITEMS = [
   { to: '/home', label: 'nav.home' },
-  { to: '/trips', label: 'nav.trips' },
   { to: '/classes', label: 'nav.classes' },
   { to: '/stay', label: 'nav.stay' },
   { to: '/build', label: 'nav.build' },
   { to: '/reviews', label: 'nav.reviews' },
   { to: '/contact', label: 'nav.contact' },
+  { to: '/blog', label: 'nav.blog' },
 ]
 
 const MotionLink = motion.create(Link)
-
-const getTripPath = (slug) =>
-  trips.find((trip) => trip.slug === slug)?.path || '/trips'
 
 function Header() {
   const { isMobileMenuOpen, setIsMobileMenuOpen } = useUIStore()
 
   const [isLangOpen, setIsLangOpen] = useState(false)
-  const [isTripsOpen, setIsTripsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activePath, setActivePath] = useState(
     typeof window !== 'undefined' ? window.location.pathname : '/'
@@ -40,19 +35,11 @@ function Header() {
   const headerRef = useRef(null)
 
   const { changeLanguage, currentLang, t } = useI18n()
-  const navigate = useNavigate()
 
   const NAV_ITEMS = BASE_NAV_ITEMS.map((item) => ({
     ...item,
     to: localizePath(item.to, currentLang),
   }))
-
-  const TRIP_SELECT_OPTIONS = [
-    { labelKey: 'trips.dropdown.allTrips', path: '/trips' },
-    { labelKey: 'trips.dropdown.kitesurfTrips', path: getTripPath('first-fly') },
-    { labelKey: 'trips.dropdown.wingfoilTrips', path: getTripPath('ride-the-coast') },
-    { labelKey: 'trips.dropdown.surfSup', path: getTripPath('solo-surf') },
-  ]
 
   const homePath = localizePath('/home', currentLang)
   const whatsappUrl = buildWhatsAppUrl(defaultInquiryMessage('Header'))
@@ -81,7 +68,6 @@ function Header() {
       if (e.key === 'Escape') {
         setIsMobileMenuOpen(false)
         setIsLangOpen(false)
-        setIsTripsOpen(false)
       }
     }
 
@@ -132,18 +118,6 @@ function Header() {
   const handleNavClick = (path) => {
     setActivePath(path)
     setIsMobileMenuOpen(false)
-    setIsTripsOpen(false)
-  }
-
-  const handleTripNavigate = (path) => {
-    if (!path) return
-
-    const localizedPath = localizePath(path, currentLang || 'en')
-
-    setActivePath(localizedPath)
-    setIsMobileMenuOpen(false)
-    setIsTripsOpen(false)
-    navigate(localizedPath)
   }
 
   // Animaciones Framer Motion
@@ -190,7 +164,6 @@ function Header() {
             className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3"
             onClick={() => {
               setIsMobileMenuOpen(false)
-              setIsTripsOpen(false)
             }}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -204,106 +177,23 @@ function Header() {
 
           {/* Nav desktop */}
           <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
-            {NAV_ITEMS.filter((item) => item.label !== 'nav.home').map((item) =>
-              item.label === 'nav.trips' ? (
-                <div
-                  key={item.to}
-                  className="relative"
-                  onMouseEnter={() => setIsTripsOpen(true)}
-                  onMouseLeave={() => setIsTripsOpen(false)}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setIsTripsOpen((prev) => !prev)}
-                    aria-expanded={isTripsOpen}
-                    aria-label="Choose a trip"
-                    className={`group relative flex h-10 items-center gap-3 overflow-hidden rounded-full border px-4 text-sm font-semibold uppercase tracking-[0.16em] backdrop-blur-xl transition-all duration-300 ${
-                      scrolled
-                        ? 'border-slate-200/80 bg-white/85 text-slate-800 shadow-[0_10px_30px_rgba(15,23,42,0.08)] hover:border-[#38E0C8]/70 hover:bg-white dark:border-[#F4F2EA]/15 dark:bg-[#0A1113]/75 dark:text-[#F4F2EA]'
-                        : 'border-[#F4F2EA]/25 bg-[#0A1113]/20 text-[#F4F2EA] shadow-[0_14px_34px_rgba(0,0,0,0.16)] hover:border-[#38E0C8]/70 hover:bg-[#0A1113]/35'
-                    }`}
-                  >
-                    <span className="relative z-10">{t(item.label)}</span>
-
-                    <span className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[#38E0C8]/30 bg-[#38E0C8]/10">
-                      <FaChevronDown
-                        className={`text-[10px] text-[#38E0C8] transition-transform duration-300 ${
-                          isTripsOpen ? 'rotate-180' : ''
-                        }`}
-                        aria-hidden="true"
-                      />
-                    </span>
-
-                    <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#38E0C8]/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-                  </button>
-
-                  <AnimatePresence>
-                    {isTripsOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 12, scale: 0.96 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 12, scale: 0.96 }}
-                        transition={{ duration: 0.22, ease: 'easeOut' }}
-                        className="absolute left-1/2 top-[calc(100%+14px)] z-[80] w-[310px] -translate-x-1/2"
-                      >
-                        <div className="overflow-hidden rounded-3xl border border-[#F4F2EA]/15 bg-[#071012]/95 p-2 shadow-[0_28px_80px_rgba(0,0,0,0.48)] backdrop-blur-2xl">
-                          <div className="px-4 pb-3 pt-3">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#38E0C8]">
-                              {t('trips.dropdown.chooseExperience')}
-                            </p>
-                            <p className="mt-1 text-xs text-[#F4F2EA]/55">
-                              {t('trips.dropdown.selectRoute')}
-                            </p>
-                          </div>
-
-                          <div className="h-px bg-gradient-to-r from-transparent via-[#F4F2EA]/15 to-transparent" />
-
-                          <div className="pt-2">
-                            {TRIP_SELECT_OPTIONS.map((option, index) => (
-                              <button
-                                key={option.path}
-                                type="button"
-                                onClick={() => handleTripNavigate(option.path)}
-                                className="group/item flex w-full items-center gap-4 rounded-2xl px-4 py-3 text-left transition-all duration-300 hover:bg-[#38E0C8]/10"
-                              >
-                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#F4F2EA]/10 bg-[#F4F2EA]/5 text-[11px] font-bold text-[#38E0C8] transition-all duration-300 group-hover/item:border-[#38E0C8]/40 group-hover/item:bg-[#38E0C8]/10">
-                                  {String(index + 1).padStart(2, '0')}
-                                </span>
-
-                                <span className="flex flex-col">
-                                  <span className="text-sm font-semibold text-[#F4F2EA] transition-colors duration-300 group-hover/item:text-[#38E0C8]">
-                                    {t(option.labelKey)}
-                                  </span>
-                                  <span className="mt-0.5 text-[11px] text-[#F4F2EA]/45">
-                                    {t('trips.dropdown.openTrip')}
-                                  </span>
-                                </span>
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ) : (
-                <MotionLink
-                  key={item.to}
-                  className={`group relative text-sm font-medium transition-colors ${navTextClass}`}
-                  to={item.to}
-                  onClick={() => handleNavClick(item.to)}
-                  whileHover={{ y: -2 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                >
-                  <span className="relative z-10">{t(item.label)}</span>
-                  <motion.span
-                    className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary"
-                    whileHover={{ width: '100%' }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </MotionLink>
-              )
-            )}
+            {NAV_ITEMS.map((item) => (
+              <MotionLink
+                key={item.to}
+                className={`group relative text-sm font-medium transition-colors ${navTextClass}`}
+                to={item.to}
+                onClick={() => handleNavClick(item.to)}
+                whileHover={{ y: -2 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              >
+                <span className="relative z-10">{t(item.label)}</span>
+                <motion.span
+                  className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary"
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </MotionLink>
+            ))}
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">

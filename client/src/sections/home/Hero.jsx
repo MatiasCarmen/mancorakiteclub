@@ -3,7 +3,6 @@ import FullscreenHero from '../../components/ui/FullscreenHero.jsx'
 import { buildWhatsAppUrl, defaultInquiryMessage } from '../../lib/whatsapp.js'
 import { useI18n } from '../../app/providers/i18nContext.js'
 import { HOME_HERO_SLIDES } from './homeContent.js'
-import heroDesktopVideo from '../../assets/VIDEOS/VideoHome.mp4'
 import heroMobileVideo from '../../assets/VIDEOS/TikVid.io_7514443269825137976-hd.mp4'
 
 function Hero() {
@@ -16,7 +15,6 @@ function Hero() {
       subtitle={t('hero.subtitle')}
       videoSources={{
         mobileSrc: heroMobileVideo,
-        desktopSrc: heroDesktopVideo,
       }}
       slides={HOME_HERO_SLIDES}
       actions={[
