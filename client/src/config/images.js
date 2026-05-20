@@ -252,6 +252,7 @@ const imageRegistry = Object.freeze({
   "HOSPEDAJE KITE HOUSE/DSC04842.webp": new URL("../assets/HOSPEDAJE KITE HOUSE/DSC04842.webp", import.meta.url).href,
   "HOSPEDAJE KITE HOUSE/DSC05230.webp": new URL("../assets/HOSPEDAJE KITE HOUSE/DSC05230.webp", import.meta.url).href,
   "HOSPEDAJE KITE HOUSE/DSC09920.webp": new URL("../assets/HOSPEDAJE KITE HOUSE/DSC09920.webp", import.meta.url).href,
+  "LOGOS KITE CLUB/iko-logo-white.webp": new URL("../assets/LOGOS KITE CLUB/iko-logo-white.webp", import.meta.url).href
 })
 
 export function resolveImage(assetPath) {
@@ -271,6 +272,7 @@ export const brandImages = Object.freeze({
   logoMark: image("LOGOS KITE CLUB/LOGO-kite-new.webp"),
   contactMark: image("LOGOS KITE CLUB/95b03a84-2865-4eda-89ae-26b332f99bb5.webp"),
   floatingWhatsAppMark: image("LOGOS KITE CLUB/LOGO-kite-new.webp"),
+  ikoLogo: image("LOGOS KITE CLUB/iko-logo-white.webp"),
   sponsors: Object.freeze({
     duotone: image("LOGOS KITE CLUB/Logo-duotone.webp"),
     ozone: image("LOGOS KITE CLUB/Logo_ozone.webp"),

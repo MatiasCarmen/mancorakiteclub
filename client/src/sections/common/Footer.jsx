@@ -22,6 +22,7 @@ const SPONSORS = [
     logo: logoOzone,
   },
 ]
+const ikoLogo = brandImages.ikoLogo
 
 function Footer() {
   const { t } = useI18n()
@@ -170,6 +171,19 @@ function Footer() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+                <div className="mt-8 border-t border-white/10 pt-8 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-white">
+            {t('footer.certified')}
+          </p>
+          <div className="mt-5 flex items-center justify-center">
+            <img
+              src={ikoLogo}
+              alt="IKO – International Kiteboarding Organization"
+              loading="lazy"
+              className="max-h-10 w-auto object-contain opacity-95 [filter:brightness(0)_saturate(100%)_invert(81%)_sepia(20%)_saturate(457%)_hue-rotate(103deg)_brightness(96%)_contrast(89%)]"
+            />
           </div>
         </div>
       </div>
