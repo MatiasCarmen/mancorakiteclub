@@ -11,6 +11,10 @@ import WingfoilWithUs from "../sections/ClassesPage/WingfoilWithUs.jsx"
 import WingfoilClasses from "../sections/ClassesPage/WingfoilClasses.jsx"
 import WingfoilBenefits from "../sections/ClassesPage/WingfoilBenefits.jsx"
 import EquipmentWing from "../sections/ClassesPage/equipment/EquipmentWing.jsx"
+import WaveRiding from "../sections/ClassesPage/WaveRiding.jsx"
+import TripsDownwinds from "../sections/ClassesPage/TripsDownwinds.jsx"
+import RentGear from "../sections/ClassesPage/RentGear.jsx"
+import SurfSup from "../sections/ClassesPage/SurfSup.jsx"
 
 function ClassesPage() {
   return (
@@ -24,7 +28,7 @@ function ClassesPage() {
         hreflang={{ en: "/classes", es: "/esp/clases", default: "/" }}
       />
 
-      {/* Bloques de Kitesurf */}
+      {/* 1. Kitesurf Lessons (Servicio Principal) */}
       <ClassesHero />
       <ClassesIntro />
       <ClassesPricing />
@@ -32,16 +36,28 @@ function ClassesPage() {
       <ClassesSteps />
       <EquipmentKite />
 
-      {/* Bloques de Wingfoil */}
+      {/* Collage premium (Break visual antes de cambiar de deporte) */}
+      <ClassesGallery />
+
+      {/* 2. Wingfoil Lessons */}
       <WingfoilIntro />
       <WingfoilWithUs />
       <WingfoilClasses />
       <WingfoilBenefits />
       <EquipmentWing />
 
+      {/* 3. Wave Riding Coaching */}
+      <WaveRiding />
 
-      {/* Collage premium */}
-      <ClassesGallery />
+      {/* 4. Trips & Downwinds */}
+      <TripsDownwinds />
+
+      {/* 5. Rent Gear */}
+      <RentGear />
+
+      {/* 6. Surf & SUP */}
+      <SurfSup />
+
     </>
   )
 }

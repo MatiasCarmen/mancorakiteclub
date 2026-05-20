@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 
 const MotionLink = motion.create(Link)
 
+import { useEffect } from "react"
+
 function ClassesGallery() {
   const galleryItems = CLASSES_GALLERY.map((image, index) => ({
     image,
@@ -21,6 +23,10 @@ function ClassesGallery() {
       "Ride Together",
     ][index] || "Mancora Kite Club",
   }))
+
+  useEffect(() => {
+    console.log("ClassesGallery items:", galleryItems)
+  }, [])
 
   return (
     <section className="relative overflow-hidden bg-[#071a19] py-16 text-white sm:py-20 lg:py-28">
@@ -90,7 +96,6 @@ function ClassesGallery() {
           >
             <img
               src={item.image}
-              loading="lazy"
               alt={item.label}
               className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
             />
@@ -144,7 +149,6 @@ function ClassesGallery() {
               >
                 <img
                   src={item.image}
-                  loading="lazy"
                   alt={item.label}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                 />
