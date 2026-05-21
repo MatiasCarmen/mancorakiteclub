@@ -2,6 +2,7 @@ import { useI18n } from '../app/providers/i18nContext.js'
 import { seoImages } from '../config/images.js'
 import { localizePath } from '../lib/routes.js'
 import SEO from '../components/SEO.jsx'
+import SchemaOrg from '../components/SchemaOrg.jsx'
 import BuilderPreview from '../sections/home/BuilderPreview.jsx'
 import Hero from '../sections/home/Hero.jsx'
 import OurStory from '../sections/home/OurStory.jsx'
@@ -25,6 +26,11 @@ function HomePage() {
         image={seoImages.defaultOpenGraph}
         canonicalPath={localizePath('/home', currentLang)}
         hreflang={{ en: '/home', es: '/esp/home', fr: '/fr/home', default: '/home' }}
+      />
+      <SchemaOrg type="LocalBusiness" />
+      <SchemaOrg
+        type="BreadcrumbList"
+        breadcrumbs={[{ name: 'Home', path: '/' }]}
       />
       <Hero />
       <CommunityGallery />

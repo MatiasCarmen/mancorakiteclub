@@ -30,7 +30,18 @@ function toAbsoluteUrl(path) {
   return new URL(path, origin).toString()
 }
 
-export function setSeoTags({ title, description, image, canonicalPath, hreflang }) {
+export function setSeoTags({
+  title,
+  description,
+  image,
+  canonicalPath,
+  hreflang,
+  keywords,
+  author,
+  type = 'website',
+  publishedTime,
+  section,
+}) {
   if (title) {
     document.title = title
   }
@@ -38,6 +49,16 @@ export function setSeoTags({ title, description, image, canonicalPath, hreflang 
   // Meta description
   const descriptionTag = ensureMetaTag('meta[name="description"]', 'name', 'description')
   descriptionTag.setAttribute('content', description || 'TODO: contenido real')
+
+  // Meta keywords
+  if (keywords) {
+    const keywordsTag = ensureMetaTag('meta[name="keywords"]', 'name', 'keywords')
+    keywordsTag.setAttribute('content', Array.isArray(keywords) ? keywords.join(', ') : keywords)
+  }
+
+  // Meta author
+  const authorTag = ensureMetaTag('meta[name="author"]', 'name', 'author')
+  authorTag.setAttribute('content', author || 'Mancora Kite Club')
 
   // Open Graph tags
   const ogTitle = ensureMetaTag('meta[property="og:title"]', 'property', 'og:title')
@@ -53,7 +74,28 @@ export function setSeoTags({ title, description, image, canonicalPath, hreflang 
   ogUrl.setAttribute('content', canonicalPath ? toAbsoluteUrl(canonicalPath) : window.location.href)
 
   const ogType = ensureMetaTag('meta[property="og:type"]', 'property', 'og:type')
-  ogType.setAttribute('content', 'website')
+  ogType.setAttribute('content', type || 'website')
+
+  // Article metadata
+  if (type === 'article') {
+    if (publishedTime) {
+      const pubTimeTag = ensureMetaTag('meta[property="article:published_time"]', 'property', 'article:published_time')
+      pubTimeTag.setAttribute('content', publishedTime)
+    }
+    if (author) {
+      const artAuthorTag = ensureMetaTag('meta[property="article:author"]', 'property', 'article:author')
+      artAuthorTag.setAttribute('content', author)
+    }
+    if (section) {
+      const artSectionTag = ensureMetaTag('meta[property="article:section"]', 'property', 'article:section')
+      artSectionTag.setAttribute('content', section)
+    }
+  } else {
+    // Remove article tags on non-article pages
+    document.querySelector('meta[property="article:published_time"]')?.remove()
+    document.querySelector('meta[property="article:author"]')?.remove()
+    document.querySelector('meta[property="article:section"]')?.remove()
+  }
 
   const ogSiteName = ensureMetaTag('meta[property="og:site_name"]', 'property', 'og:site_name')
   ogSiteName.setAttribute('content', 'Máncora Kite Club')

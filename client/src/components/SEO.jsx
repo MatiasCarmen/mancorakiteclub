@@ -26,6 +26,11 @@ function SEO({
   descFallback = 'Escuela de Kitesurf y Wingfoil en Máncora, Perú',
   canonicalPath,
   hreflang,
+  keywords,
+  author,
+  type = 'website',
+  publishedTime,
+  section,
 }) {
   const { t } = useI18n()
   const pathMeta = getSeoMetaByPath(canonicalPath)
@@ -37,6 +42,9 @@ function SEO({
   const resolvedImage = image || pathMeta.image || seoImages.defaultOpenGraph
   const resolvedCanonicalPath = canonicalPath || pathMeta.canonicalPath
   const resolvedHreflang = hreflang || pathMeta.hreflang
+  const resolvedKeywords = keywords || pathMeta.keywords
+  const resolvedAuthor = author || pathMeta.author
+  const resolvedType = type || pathMeta.type || 'website'
 
   useEffect(() => {
     setSeoTags({
@@ -45,8 +53,24 @@ function SEO({
       image: resolvedImage,
       canonicalPath: resolvedCanonicalPath,
       hreflang: resolvedHreflang,
+      keywords: resolvedKeywords,
+      author: resolvedAuthor,
+      type: resolvedType,
+      publishedTime,
+      section,
     })
-  }, [resolvedTitle, resolvedDescription, resolvedImage, resolvedCanonicalPath, resolvedHreflang])
+  }, [
+    resolvedTitle,
+    resolvedDescription,
+    resolvedImage,
+    resolvedCanonicalPath,
+    resolvedHreflang,
+    resolvedKeywords,
+    resolvedAuthor,
+    resolvedType,
+    publishedTime,
+    section,
+  ])
 
   return null
 }

@@ -1,4 +1,5 @@
 import SEO from "../components/SEO"
+import SchemaOrg from "../components/SchemaOrg.jsx"
 import { useI18n } from "../app/providers/i18nContext.js"
 import { localizePath } from "../lib/routes.js"
 import ClassesHero from "../sections/ClassesPage/ClassesHero.jsx"
@@ -31,6 +32,11 @@ function ClassesPage() {
         canonicalPath={localizePath("/classes", currentLang)}
         hreflang={{ en: "/classes", es: "/esp/classes", fr: "/fr/classes", default: "/classes" }}
       />
+
+      <SchemaOrg type="Course" serviceKey="kitesurfLessons" />
+      <SchemaOrg type="Course" serviceKey="wingfoilLessons" />
+      <SchemaOrg type="Course" serviceKey="waveRiding" />
+      <SchemaOrg type="Course" serviceKey="surfSup" />
 
       {/* 1. Kitesurf Lessons (Servicio Principal) */}
       <ClassesHero />

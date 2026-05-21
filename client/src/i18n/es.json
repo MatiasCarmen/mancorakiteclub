@@ -46,7 +46,14 @@
     "privacy": "Política de Privacidad",
     "partners": "Socios Oficiales",
     "certified": "Instructores Certificados en IKO",
-    "address": "Playa Máncora, Piura, Perú"
+    "address": "Playa Máncora, Piura, Perú",
+    "servicesLabel": "Servicios",
+    "kitesurfLessons": "Clases de Kitesurf",
+    "wingfoilLessons": "Clases de Wingfoil",
+    "waveRiding": "Coaching de Wave Riding",
+    "tripsDownwinds": "Viajes & Downwinds",
+    "rentGear": "Alquiler de Equipos",
+    "surfSup": "Surf & SUP"
   },
   "common": {
     "learnMore": "Saber más",
@@ -143,7 +150,19 @@
     "reviewsTitle": "Reseñas | Máncora Kite Club",
     "reviewsDesc": "Lee reseñas de kitesurfistas y viajeros que han vivido la experiencia Máncora Kite Club. Historias reales de huéspedes reales.",
     "wavesTitle": "Condiciones de Olas | Máncora Kite Club",
-    "wavesDesc": "Condiciones de olas en vivo, pronóstico de swell y reporte de viento para Máncora, Perú. Planifica tu sesión de kitesurf con datos en tiempo real."
+    "wavesDesc": "Condiciones de olas en vivo, pronóstico de swell y reporte de viento para Máncora, Perú. Planifica tu sesión de kitesurf con datos en tiempo real.",
+    "kitesurfLessonsTitle": "Clases de Kitesurf en Máncora | Escuela Certificada IKO",
+    "kitesurfLessonsDesc": "Aprende kitesurf en Máncora, Perú con instructores certificados por la IKO. Clases para principiantes y avanzados, equipo premium y condiciones seguras. ¡Reserva ya!",
+    "wingfoilLessonsTitle": "Clases de Wingfoil en Máncora | Aprende Wingfoil | Mancora Kite Club",
+    "wingfoilLessonsDesc": "Domina el wingfoil en Máncora, Perú. Clases seguras y estructuradas para principiantes y progresión intermedia con entrenadores experimentados.",
+    "waveRidingTitle": "Coaching de Wave Riding en Máncora | Surf & Kite Waves",
+    "waveRidingDesc": "Lleva tu navegación en olas al siguiente nivel en el norte de Perú. Clases y coaching personalizado de kitesurf en olas y surf en Máncora.",
+    "tripsDownwindsTitle": "Viajes de Kitesurf & Downwinds en Perú | Mancora Kite Club",
+    "tripsDownwindsDesc": "Embárcate en downwinds épicos y viajes de kitesurf en la costa norte de Perú. Spots secretos, guías locales y vehículos de apoyo. ¡Reserva tu viaje!",
+    "rentGearTitle": "Alquiler de Equipo de Kitesurf & Wingfoil en Máncora",
+    "rentGearDesc": "Alquila equipo premium de kitesurf y wingfoil en Máncora, Perú. Marcas internacionales de primer nivel, equipos mantenidos y seguridad garantizada.",
+    "surfSupTitle": "Clases y Alquiler de Surf & SUP en Máncora | Mancora Kite Club",
+    "surfSupDesc": "Disfruta del surf y Stand Up Paddle (SUP) en Máncora, Perú. Clases privadas para todas las edades, alquiler de tablas y tours diarios."
   },
   "chatbot": {
     "title": "Asistente IA",

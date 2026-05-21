@@ -33,7 +33,7 @@ function Footer() {
   return (
     <footer className="overflow-hidden bg-[#1e3130] pb-8 pt-16 text-white sm:pt-20 lg:pt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-8">
-        <div className="mb-12 grid grid-cols-1 justify-items-center gap-10 sm:gap-10 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:justify-items-start lg:gap-10 xl:gap-12">
+        <div className="mb-12 grid grid-cols-1 justify-items-center gap-10 sm:gap-10 md:grid-cols-2 md:gap-10 lg:grid-cols-5 lg:justify-items-start lg:gap-8 xl:gap-10">
           <div className="col-span-1 flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:text-left">
             <div className="mb-5 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <img
@@ -80,7 +80,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:px-2 lg:text-left xl:pl-8">
+          <div className="flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:px-2 lg:text-left xl:pl-4">
             <h4 className="mb-5 text-base font-bold text-white">{t('footer.exploreLabel')}</h4>
             <ul className="space-y-1.5 text-sm text-white">
               <li>
@@ -101,6 +101,42 @@ function Footer() {
               <li>
                 <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/build', currentLang)}>
                   {t('footer.packages')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex w-full max-w-sm flex-col items-center text-center lg:items-start lg:text-left">
+            <h4 className="mb-5 text-base font-bold text-white">{t('footer.servicesLabel')}</h4>
+            <ul className="space-y-1.5 text-sm text-white">
+              <li>
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/services/kitesurf-lessons', currentLang)}>
+                  {t('footer.kitesurfLessons')}
+                </Link>
+              </li>
+              <li>
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/services/wingfoil-lessons', currentLang)}>
+                  {t('footer.wingfoilLessons')}
+                </Link>
+              </li>
+              <li>
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/services/wave-riding-coaching', currentLang)}>
+                  {t('footer.waveRiding')}
+                </Link>
+              </li>
+              <li>
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/services/trips-downwinds', currentLang)}>
+                  {t('footer.tripsDownwinds')}
+                </Link>
+              </li>
+              <li>
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/services/rent-gear', currentLang)}>
+                  {t('footer.rentGear')}
+                </Link>
+              </li>
+              <li>
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/services/surf-sup', currentLang)}>
+                  {t('footer.surfSup')}
                 </Link>
               </li>
             </ul>

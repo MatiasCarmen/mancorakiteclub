@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /loading
+Disallow: /api/
+
+Sitemap: https://www.mancorakiteclub.com/sitemap.xml

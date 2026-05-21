@@ -1,4 +1,4 @@
-import { useMemo, useCallback } from 'react'
+import { useMemo, useCallback, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { I18nContext } from './i18nContext.js'
 import en from '../../i18n/en.json'
@@ -57,6 +57,11 @@ export function I18nProvider({ children }) {
 
   // Detectar idioma actual de la URL
   const language = useMemo(() => getLanguageFromPath(location.pathname), [location.pathname])
+
+  // Actualizar el atributo lang del HTML dinámicamente para SEO
+  useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
 
   // Función para cambiar de idioma navegando a la URL correcta
   const changeLanguage = useCallback(

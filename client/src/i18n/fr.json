@@ -46,7 +46,14 @@
     "privacy": "Politique de Confidentialité",
     "partners": "Partenaires Officiels",
     "certified": "Instructeurs certifiés IKO",
-    "address": "Plage de Máncora, Piura, Pérou"
+    "address": "Plage de Máncora, Piura, Pérou",
+    "servicesLabel": "Services",
+    "kitesurfLessons": "Cours de Kitesurf",
+    "wingfoilLessons": "Cours de Wingfoil",
+    "waveRiding": "Coaching de Wave Riding",
+    "tripsDownwinds": "Voyages & Downwinds",
+    "rentGear": "Location de Matériel",
+    "surfSup": "Surf & SUP"
   },
   "common": {
     "learnMore": "En savoir plus",
@@ -143,7 +150,19 @@
     "reviewsTitle": "Avis | Máncora Kite Club",
     "reviewsDesc": "Lisez les avis des kitesurfeurs et voyageurs qui ont vécu l'expérience Máncora Kite Club. Des histoires vraies de vrais clients.",
     "wavesTitle": "Conditions de Vagues | Máncora Kite Club",
-    "wavesDesc": "Conditions de vagues en direct, prévisions de houle et rapport de vent pour Máncora, Pérou. Planifiez votre session de kitesurf avec des données en temps réel."
+    "wavesDesc": "Conditions de vagues en direct, prévisions de houle et rapport de vent pour Máncora, Pérou. Planifiez votre session de kitesurf avec des données en temps réel.",
+    "kitesurfLessonsTitle": "Cours de Kitesurf à Máncora | École Certifiée IKO",
+    "kitesurfLessonsDesc": "Apprenez le kitesurf à Máncora, Pérou avec nos instructeurs certifiés IKO. Cours débutant à avancé, matériel premium et conditions sûres. Réservez maintenant !",
+    "wingfoilLessonsTitle": "Cours de Wingfoil à Máncora | Apprendre le Wingfoil",
+    "wingfoilLessonsDesc": "Maîtrisez le wingfoil à Máncora, Pérou. Cours sûrs et structurés pour débutants et progression intermédiaire avec nos coachs expérimentés.",
+    "waveRidingTitle": "Coaching de Wave Riding à Máncora | Surf & Kite Waves",
+    "waveRidingDesc": "Passez au niveau supérieur en navigation de vagues dans le nord du Pérou. Coaching personnalisé de kitesurf de vagues et de surf à Máncora.",
+    "tripsDownwindsTitle": "Voyages de Kitesurf & Downwinds au Pérou | Mancora Kite Club",
+    "tripsDownwindsDesc": "Embarquez pour des downwinds épiques et des séjours kitesurf sur la côte nord du Pérou. Spots secrets, guides locaux et véhicules d'assistance.",
+    "rentGearTitle": "Location de Matériel Kitesurf & Wingfoil à Máncora",
+    "rentGearDesc": "Louez du matériel de kitesurf et wingfoil haut de gamme à Máncora, Pérou. Marques internationales de premier plan et équipement parfaitement entretenu.",
+    "surfSupTitle": "Cours et Locations de Surf & SUP à Máncora | Mancora Kite Club",
+    "surfSupDesc": "Découvrez le surf et le Stand Up Paddle (SUP) à Máncora, Pérou. Cours privés tous âges, location de planches et excursions quotidiennes."
   },
   "chatbot": {
     "title": "Assistant IA",

@@ -8,6 +8,7 @@ import MancoraVsLobitosPage from "./MancoraVsLobitosPage.jsx"
 import PeruKitesurfPage from "./PeruKitesurfPage.jsx"
 import PacasmayoPage from "./PacasmayoPage.jsx"
 import SEO from "../../components/SEO.jsx"
+import SchemaOrg from "../../components/SchemaOrg.jsx"
 
 const STRUCTURED_PAGE_BY_SLUG = {
   "chicama-peru-surf-trip": ChicamaPage,
@@ -61,6 +62,19 @@ function BlogPostPage() {
     return (
       <>
         <SEO title={structuredTitle} description={structuredDescription} />
+        {premiumPost && (
+          <>
+            <SchemaOrg type="BlogPosting" post={premiumPost} />
+            <SchemaOrg
+              type="BreadcrumbList"
+              breadcrumbs={[
+                { name: 'Home', path: '/' },
+                { name: 'Blog', path: '/blog' },
+                { name: premiumPost.title, path: `/blog/${premiumPost.slug}` },
+              ]}
+            />
+          </>
+        )}
         <StructuredComponent />
       </>
     )
@@ -71,6 +85,15 @@ function BlogPostPage() {
     return (
       <>
         <SEO title={legacyPost.metaTitle} description={legacyPost.metaDescription} />
+        <SchemaOrg type="BlogPosting" post={legacyPost} />
+        <SchemaOrg
+          type="BreadcrumbList"
+          breadcrumbs={[
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: legacyPost.title, path: `/blog/${legacyPost.slug}` },
+          ]}
+        />
         <LegacyComponent />
       </>
     )
@@ -82,6 +105,15 @@ function BlogPostPage() {
     return (
       <>
         <SEO title={premiumTitle} description={premiumDesc} />
+        <SchemaOrg type="BlogPosting" post={premiumPost} />
+        <SchemaOrg
+          type="BreadcrumbList"
+          breadcrumbs={[
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: premiumPost.title, path: `/blog/${premiumPost.slug}` },
+          ]}
+        />
         <PremiumBlogArticle post={premiumPost} />
       </>
     )
