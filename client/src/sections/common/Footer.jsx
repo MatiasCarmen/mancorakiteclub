@@ -1,6 +1,9 @@
 import { brandImages } from '../../config/images.js'
 import { FaEnvelope, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaWhatsapp, FaYoutube } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import { useI18n } from '../../app/providers/i18nContext.js'
+import { localizePath } from '../../lib/routes.js'
+import { buildWhatsAppUrl } from '../../lib/whatsapp.js'
 
 const footerBrandLogo = brandImages.logoComplete
 const { duotone: logoDuotone, ozone: logoOzone, ride: logoRide, slingshot: logoSlingshot } = brandImages.sponsors
@@ -25,7 +28,7 @@ const SPONSORS = [
 const ikoLogo = brandImages.ikoLogo
 
 function Footer() {
-  const { t } = useI18n()
+  const { t, currentLang } = useI18n()
 
   return (
     <footer className="overflow-hidden bg-[#1e3130] pb-8 pt-16 text-white sm:pt-20 lg:pt-24">
@@ -49,21 +52,27 @@ function Footer() {
             <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
               <a
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-primary"
-                href="#"
+                href="https://www.instagram.com/kiteclubmancora/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <FaInstagram />
               </a>
               <a
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-primary"
-                href="#"
+                href="https://www.facebook.com/MancoraKiteClub"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <FaFacebookF />
               </a>
               <a
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-primary"
-                href="#"
+                href="https://www.youtube.com/@mancorakiteclub4328"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="YouTube"
               >
                 <FaYoutube />
@@ -75,24 +84,24 @@ function Footer() {
             <h4 className="mb-5 text-base font-bold text-white">{t('footer.exploreLabel')}</h4>
             <ul className="space-y-1.5 text-sm text-white">
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/trips', currentLang)}>
                   {t('footer.tripsLink')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/stay', currentLang)}>
                   {t('footer.accommodationLink')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/classes', currentLang)}>
                   {t('footer.kiteLessons')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/build', currentLang)}>
                   {t('footer.packages')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -101,24 +110,24 @@ function Footer() {
             <h4 className="mb-5 text-base font-bold text-white">{t('footer.companyLabel')}</h4>
             <ul className="space-y-1.5 text-sm text-white">
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/home', currentLang)}>
                   {t('footer.aboutUs')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/home', currentLang)}>
                   {t('footer.instructors')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/contact', currentLang)}>
                   {t('footer.contactLink')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="inline-flex min-h-10 items-center transition-colors hover:text-white" href="#">
+                <Link className="inline-flex min-h-10 items-center transition-colors hover:text-white" to={localizePath('/faq', currentLang)}>
                   {t('footer.privacy')}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -128,15 +137,34 @@ function Footer() {
             <ul className="space-y-3 text-sm leading-7 text-white">
               <li className="flex items-start justify-center gap-3 text-center lg:justify-start lg:text-left">
                 <FaMapMarkerAlt className="mt-1 shrink-0 text-white" />
-                <span className="max-w-xs break-words">{t('footer.address')}</span>
+                <a
+                  href="https://maps.google.com/?q=M%C3%A1ncora+Piura+Per%C3%BA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="max-w-xs break-words transition-colors hover:text-white"
+                >
+                  {t('footer.address')}
+                </a>
               </li>
               <li className="flex items-start justify-center gap-3 text-center lg:justify-start lg:text-left">
                 <FaEnvelope className="mt-1 shrink-0 text-white" />
-                <span className="max-w-xs break-all sm:break-words">{t('footer.email')}</span>
+                <a
+                  href="mailto:kiteclub.mancora@gmail.com"
+                  className="max-w-xs break-all transition-colors hover:text-white sm:break-words"
+                >
+                  {t('footer.email')}
+                </a>
               </li>
               <li className="flex items-start justify-center gap-3 text-center lg:justify-start lg:text-left">
                 <FaWhatsapp className="mt-1 shrink-0 text-white" />
-                <span className="max-w-xs break-words">{t('footer.phone')}</span>
+                <a
+                  href={buildWhatsAppUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="max-w-xs break-words transition-colors hover:text-white"
+                >
+                  {t('footer.phone')}
+                </a>
               </li>
             </ul>
           </div>
