@@ -66,19 +66,24 @@ function ImageCarousel({ title = "Visual Journal", images = [] }) {
       </div>
 
       <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10">
-        <div className="aspect-[16/10] overflow-hidden bg-slate-950">
+        <div className="aspect-[4/5] overflow-hidden bg-slate-950 md:aspect-[16/10]">
           <AnimatePresence mode="wait" initial={false}>
-            <motion.img
+            <motion.picture
               key={images[activeIndex].src}
-              src={images[activeIndex].src}
-              alt={images[activeIndex].alt}
-              loading="lazy"
               className="h-full w-full object-cover"
               initial={{ opacity: 0, x: direction > 0 ? 36 : -36 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: direction > 0 ? -36 : 36 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            />
+            >
+              <source media="(min-width: 768px)" srcSet={images[activeIndex].src} />
+              <img
+                src={images[activeIndex].mobileSrc || images[activeIndex].src}
+                alt={images[activeIndex].alt}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </motion.picture>
           </AnimatePresence>
         </div>
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent px-6 py-5">
@@ -102,12 +107,15 @@ function ImageCarousel({ title = "Visual Journal", images = [] }) {
               }`}
               aria-label={`Open image ${index + 1}`}
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                className="aspect-[4/3] h-full w-full object-cover"
-              />
+              <picture>
+                <source media="(min-width: 768px)" srcSet={image.src} />
+                <img
+                  src={image.mobileSrc || image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  className="aspect-[4/5] h-full w-full object-cover md:aspect-[4/3]"
+                />
+              </picture>
             </button>
           )
         })}

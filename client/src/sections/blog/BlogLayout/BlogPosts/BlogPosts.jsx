@@ -15,6 +15,8 @@ function BlogPosts() {
           date={post.date}
           author={post.author}
           image={post.image}
+          desktopImage={post.desktopImage}
+          mobileImage={post.mobileImage}
         />
       )}
     />

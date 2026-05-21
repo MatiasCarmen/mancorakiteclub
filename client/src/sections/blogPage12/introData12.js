@@ -20,7 +20,7 @@ export const WHALE_SEASON_DATA12 = {
                 { icon: "phishing", label: "Behavioral Patterns", desc: "Mothers and calves typically stay closer to shore. Breaching activity is frequent." },
                 { icon: "distance", label: "Distance Protocols", desc: "Strict 100m minimum approach distance maintained by licensed vessels." }
             ],
-            image: "whale-tail-diving.jpg" 
+            image: "fotos trip/DSC04250.webp" 
         },
         {
             id: "02",
@@ -30,7 +30,7 @@ export const WHALE_SEASON_DATA12 = {
                 { icon: "water", label: "Point Break Dynamics", desc: "Long left-handers organize along the reef. Best ridden with strapless surfboards." },
                 { icon: "security", label: "Shared Waters", desc: "Riders must remain vigilant. Whales occasionally transit through outer break zones." }
             ],
-            image: "kitesurfer-boost.jpg"
+            image: "fotos home/DSC04249 2.webp"
         }
     ]
 };

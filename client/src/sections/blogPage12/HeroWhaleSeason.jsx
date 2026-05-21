@@ -1,9 +1,8 @@
 import { componentImages } from '../../config/images.js'
 import FullscreenHero from "../../components/ui/FullscreenHero.jsx"
-import { createPresetHeroSlides } from "../../lib/fullscreenHeroSlides.js"
 import { WHALE_SEASON_DATA12 } from "./introData12"
 
-const { heroImg } = componentImages["sections/blogPage12/HeroWhaleSeason.jsx"]
+const { heroImg, heroMobileImg } = componentImages["sections/blogPage12/HeroWhaleSeason.jsx"]
 function HeroWhaleSeason() {
   const { hero } = WHALE_SEASON_DATA12
 
@@ -13,11 +12,14 @@ function HeroWhaleSeason() {
       eyebrow={hero.location}
       title={`${hero.title} ${hero.highlight}`}
       subtitle={hero.description}
-      slides={createPresetHeroSlides('kite', {
-        desktop: [heroImg],
-        alt: 'Mancora whale season',
-        imageClassName: 'object-[52%_center] md:object-center',
-      })}
+      slides={[
+        {
+          desktopSrc: heroImg,
+          mobileSrc: heroMobileImg,
+          alt: 'Mancora whale season',
+          imageClassName: 'object-[52%_center] md:object-center',
+        },
+      ]}
       contentClassName="max-w-3xl md:max-w-4xl"
     />
   )

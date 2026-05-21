@@ -25,7 +25,7 @@ export const CHOICE_DATA14 = {
                 { name: "Wingfoil Zone", value: "12-18 kts", color: "border-t-[#5af8fb]/50 text-[#5af8fb]" },
                 { name: "Kitesurf Zone", value: "18-25+ kts", color: "border-t-[#ff9069]/50 text-[#ff9069]" }
             ],
-            image: "kite-tension-bar.jpg"
+            image: "fotos clases/DSC07693.webp"
         },
         {
             id: "waves",
@@ -33,7 +33,7 @@ export const CHOICE_DATA14 = {
             label: "Wave Dynamics",
             title: "Hydrodynamic Extraction",
             desc: "For the endless lefts of Pacasmayo, the wingfoil is unmatched. It allows the rider to neutralize wind drag and surf swell energy freely. Kitesurfing offers high-speed vertical hacking, relying on constant tension.",
-            image: "pacasmayo-waves-aerial.jpg",
+            image: "fotos wingfoil/DSC00021.webp",
             isReversed: true
         }
     ],

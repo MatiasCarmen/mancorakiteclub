@@ -1,7 +1,7 @@
 import { INTRO_DATA8 } from "./introData8";
 import { resolveImage } from "../../config/images.js";
 
-const SWELL_IMAGE = resolveImage("imagenes-kitesurfing/posicionkt7.jpg");
+const SWELL_IMAGE = resolveImage("fotos trip/DSC07145.webp");
 const TURNS_IMAGE = resolveImage("fotos trip/DSC02043.webp");
 
 function TechniquesContent8() {

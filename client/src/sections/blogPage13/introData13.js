@@ -18,7 +18,7 @@ export const SEVEN_PLANS_DATA7 = {
             title: "Foundation at Máncora Point",
             description: "Morning uncrowded surf sessions to read the break. Afternoon wind shift activates the kite sessions. Focus on dialing in your stance against the Pacific's raw energy.",
             targets: ["Analyze swell direction and point break mechanics.", "Stance correction: Weight distribution on directional boards."],
-            image: "mancora-point.jpg",
+            image: "fotos clases/DSC05719.webp",
             isReversed: false
         },
         {
@@ -26,7 +26,7 @@ export const SEVEN_PLANS_DATA7 = {
             icons: ["looks_3"],
             title: "Los Organos Expedition",
             description: "A shift in perspective. Morning expedition for humpback whale observation to understand the marine ecosystem. Afternoon features technical kiting in shifting currents.",
-            image: "organos-whale.jpg",
+            image: "fotos trip/DSC04250.webp",
             isReversed: true
         },
         {
@@ -35,7 +35,7 @@ export const SEVEN_PLANS_DATA7 = {
             title: "The Vichayito Downwinder",
             description: "The core of the progression plan. A grueling, beautiful downwind run pushing endurance. This is where technical kite loops are forged under pressure.",
             proTip: "Commit entirely. The hesitation is where control is lost. Initiate the loop as you reach the wave's apex to generate forward drive.",
-            image: "vichayito-loop.jpg",
+            image: "fotos home/DSC00406.webp",
             isReversed: false
         }
     ],

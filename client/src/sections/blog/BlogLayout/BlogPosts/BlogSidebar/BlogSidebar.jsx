@@ -51,31 +51,39 @@ function BlogSidebar() {
         </div>
 
         <div className="mt-5 flex flex-col gap-4">
-          {visibleTrendingPosts.map((post) => (
-            <Link
-              key={post.slug}
-              to={`/blog/${post.slug}`}
-              className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-white hover:shadow-[0_16px_34px_rgba(15,23,42,0.08)]"
-            >
-              <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-slate-200">
-                <img
-                  src={post.image}
-                  alt={post.alt || post.title}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
+          {visibleTrendingPosts.map((post) => {
+            const desktopSrc = post.desktopImage || post.image
+            const mobileSrc = post.mobileImage || desktopSrc
 
-              <div className="min-w-0 flex-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-cyan-700/70">
-                  Trending Read
-                </p>
+            return (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-white hover:shadow-[0_16px_34px_rgba(15,23,42,0.08)]"
+              >
+                <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-slate-200">
+                  <picture>
+                    <source media="(min-width: 768px)" srcSet={desktopSrc} />
+                    <img
+                      src={mobileSrc}
+                      alt={post.alt || post.title}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </picture>
+                </div>
 
-                <p className="mt-2 text-sm font-semibold leading-5 text-slate-900 transition group-hover:text-cyan-700">
-                  {post.title}
-                </p>
-              </div>
-            </Link>
-          ))}
+                <div className="min-w-0 flex-1">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-cyan-700/70">
+                    Trending Read
+                  </p>
+
+                  <p className="mt-2 text-sm font-semibold leading-5 text-slate-900 transition group-hover:text-cyan-700">
+                    {post.title}
+                  </p>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </section>
 

@@ -40,12 +40,15 @@ function RelatedPostsSidebar({ currentPost, relatedPosts = [] }) {
                 to={`/blog/${post.slug}`}
                 className="group flex gap-4 rounded-[1.4rem] border border-white/[0.08] bg-slate-950/40 p-3 transition hover:border-cyan-300/30 hover:bg-slate-950/70"
               >
-                <img
-                  src={post.heroImage}
-                  alt={post.title}
-                  loading="lazy"
-                  className="h-20 w-20 flex-none rounded-2xl object-cover"
-                />
+                <picture className="h-20 w-20 flex-none overflow-hidden rounded-2xl">
+                  <source media="(min-width: 768px)" srcSet={post.desktopImage || post.heroImage} />
+                  <img
+                    src={post.mobileImage || post.heroImage}
+                    alt={post.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </picture>
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.24em] text-cyan-100/60">
                     {post.category}

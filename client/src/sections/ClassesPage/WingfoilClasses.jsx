@@ -2,7 +2,7 @@ import { componentImages } from '../../config/images.js'
 import { motion } from "framer-motion"
 import { buildClassInquiryMessage, buildWhatsAppUrl } from "../../lib/whatsapp"
 
-const { wingIntro, wingFundamental, wingAdvanced, wingMaster, wingIntroSemi, wingFundamentalSemi, wingAdvancedSemi, wingMasterSemi } = componentImages["sections/ClassesPage/WingfoilClasses.jsx"]
+const { wingIntro, wingIntroHover, wingFundamental, wingFundamentalHover, wingAdvanced, wingAdvancedHover, wingMaster, wingMasterHover, wingIntroSemi, wingIntroSemiHover, wingFundamentalSemi, wingFundamentalSemiHover, wingAdvancedSemi, wingAdvancedSemiHover, wingMasterSemi, wingMasterSemiHover } = componentImages["sections/ClassesPage/WingfoilClasses.jsx"]
 const WINGFOIL_PRIVATE_CLASSES = [
   {
     id: "discovery",
@@ -10,7 +10,7 @@ const WINGFOIL_PRIVATE_CLASSES = [
     duration: "1 day | 2 hours/day",
     price: "$120 USD / person",
     image: wingIntro,
-    hoverImage: wingFundamental,
+    hoverImage: wingIntroHover,
     features: [
       "Discover the basics of Wingfoil",
       "Theory + land balance exercises",
@@ -25,7 +25,7 @@ const WINGFOIL_PRIVATE_CLASSES = [
     duration: "3 days | 2 hours/day",
     price: "$350 USD / person",
     image: wingFundamental,
-    hoverImage: wingAdvanced,
+    hoverImage: wingFundamentalHover,
     features: [
       "Solid foundation & safety techniques",
       "Wing dominance exercises",
@@ -40,7 +40,7 @@ const WINGFOIL_PRIVATE_CLASSES = [
     duration: "3 days | 3 hours/day",
     price: "$500 USD / person",
     image: wingAdvanced,
-    hoverImage: wingMaster,
+    hoverImage: wingAdvancedHover,
     features: [
       "Perfect advanced maneuvers",
       "Technical + theoretical sessions",
@@ -55,7 +55,7 @@ const WINGFOIL_PRIVATE_CLASSES = [
     duration: "5 days | Flexible schedule",
     price: "$600 USD / person",
     image: wingMaster,
-    hoverImage: wingIntro,
+    hoverImage: wingMasterHover,
     featured: true,
     features: [
       "From fundamentals to advanced",
@@ -74,7 +74,7 @@ const WINGFOIL_SEMI_PRIVATE_CLASSES = [
     duration: "1 day | 2 hours/day",
     price: "$90 USD / person",
     image: wingIntroSemi,
-    hoverImage: wingFundamentalSemi,
+    hoverImage: wingIntroSemiHover,
     features: [
       "Discover the basics of Wingfoil",
       "1 instructor shared between 2 students",
@@ -88,7 +88,7 @@ const WINGFOIL_SEMI_PRIVATE_CLASSES = [
     duration: "3 days | 2 hours/day",
     price: "$250 USD / person",
     image: wingFundamentalSemi,
-    hoverImage: wingAdvancedSemi,
+    hoverImage: wingFundamentalSemiHover,
     features: [
       "Solid foundation & safety techniques",
       "1 instructor shared between 2 students",
@@ -102,7 +102,7 @@ const WINGFOIL_SEMI_PRIVATE_CLASSES = [
     duration: "3 days | 3 hours/day",
     price: "$350 USD / person",
     image: wingAdvancedSemi,
-    hoverImage: wingMasterSemi,
+    hoverImage: wingAdvancedSemiHover,
     features: [
       "Perfect advanced maneuvers",
       "1 instructor shared between 2 students",
@@ -116,7 +116,7 @@ const WINGFOIL_SEMI_PRIVATE_CLASSES = [
     duration: "5 days | Flexible schedule",
     price: "$450 USD / person",
     image: wingMasterSemi,
-    hoverImage: wingIntroSemi,
+    hoverImage: wingMasterSemiHover,
     featured: true,
     features: [
       "From fundamentals to advanced",

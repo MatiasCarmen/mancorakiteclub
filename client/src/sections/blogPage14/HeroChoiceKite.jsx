@@ -1,9 +1,8 @@
 import { componentImages } from '../../config/images.js'
 import FullscreenHero from "../../components/ui/FullscreenHero.jsx"
-import { createPresetHeroSlides } from "../../lib/fullscreenHeroSlides.js"
 import { CHOICE_DATA14 } from "./introData14"
 
-const { heroImg } = componentImages["sections/blogPage14/HeroChoiceKite.jsx"]
+const { heroImg, heroMobileImg } = componentImages["sections/blogPage14/HeroChoiceKite.jsx"]
 function HeroChoiceKite() {
   const { hero } = CHOICE_DATA14
 
@@ -13,11 +12,14 @@ function HeroChoiceKite() {
       eyebrow={hero.tag}
       title={`${hero.title} ${hero.highlight}`}
       subtitle={hero.description}
-      slides={createPresetHeroSlides('wing', {
-        desktop: [heroImg],
-        alt: 'Wingfoil and kitesurf comparison',
-        imageClassName: 'object-[52%_center] md:object-center',
-      })}
+      slides={[
+        {
+          desktopSrc: heroImg,
+          mobileSrc: heroMobileImg,
+          alt: 'Wingfoil and kitesurf comparison',
+          imageClassName: 'object-[52%_center] md:object-center',
+        },
+      ]}
       contentClassName="max-w-3xl md:max-w-4xl"
     />
   )

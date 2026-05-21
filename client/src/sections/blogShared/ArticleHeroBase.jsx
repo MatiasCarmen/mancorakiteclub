@@ -1,7 +1,6 @@
 import FullscreenHero from "../../components/ui/FullscreenHero.jsx"
-import { createPresetHeroSlides } from "../../lib/fullscreenHeroSlides.js"
 
-function ArticleHeroBase({ eyebrow, title, description, meta = [], image, imageAlt }) {
+function ArticleHeroBase({ eyebrow, title, description, meta = [], image, mobileImage, imageAlt }) {
   return (
     <FullscreenHero
       as="section"
@@ -9,11 +8,14 @@ function ArticleHeroBase({ eyebrow, title, description, meta = [], image, imageA
       title={title}
       subtitle={description}
       meta={meta}
-      slides={createPresetHeroSlides('blog', {
-        desktop: [image],
-        alt: imageAlt || title,
-        imageClassName: 'object-[52%_center] md:object-center',
-      })}
+      slides={[
+        {
+          desktopSrc: image,
+          mobileSrc: mobileImage || image,
+          alt: imageAlt || title,
+          imageClassName: 'object-[52%_center] md:object-center',
+        },
+      ]}
       contentClassName="max-w-3xl md:max-w-4xl"
     />
   )

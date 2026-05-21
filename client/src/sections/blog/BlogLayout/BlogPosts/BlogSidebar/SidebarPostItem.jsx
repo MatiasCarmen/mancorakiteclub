@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom"
 
-function SidebarPostItem({ title, image, slug }) {
+function SidebarPostItem({ title, image, desktopImage, mobileImage, slug }) {
+  const desktopSrc = desktopImage || image
+  const mobileSrc = mobileImage || desktopSrc
+
   return (
     <Link
       to={`/blog/${slug}`}
       className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50/80 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-white hover:shadow-[0_16px_32px_rgba(15,23,42,0.08)]"
     >
       <div className="h-16 w-16 flex-none overflow-hidden rounded-xl bg-slate-200">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet={desktopSrc} />
+          <img
+            src={mobileSrc}
+            alt={title}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        </picture>
       </div>
 
       <div className="min-w-0 flex-1">

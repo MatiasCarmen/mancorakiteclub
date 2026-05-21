@@ -1,5 +1,4 @@
 import FullscreenHero from "../ui/FullscreenHero.jsx"
-import { createPresetHeroSlides } from "../../lib/fullscreenHeroSlides.js"
 
 function BlogIndexHero({ featuredPost }) {
   return (
@@ -8,11 +7,14 @@ function BlogIndexHero({ featuredPost }) {
       eyebrow="The Peru Ocean Journal"
       title="Premium surf and kitesurf stories that all point back to Mancora"
       subtitle="Long lefts, wind windows, route design, and honest comparisons across Peru."
-      slides={createPresetHeroSlides('blog', {
-        desktop: [featuredPost.heroImage],
-        alt: featuredPost.title,
-        imageClassName: 'object-[52%_center] md:object-center',
-      })}
+      slides={[
+        {
+          desktopSrc: featuredPost.heroImage,
+          mobileSrc: featuredPost.mobileImage || featuredPost.heroImage,
+          alt: featuredPost.title,
+          imageClassName: 'object-[52%_center] md:object-center',
+        },
+      ]}
       contentClassName="max-w-3xl md:max-w-4xl"
       actions={[
         {

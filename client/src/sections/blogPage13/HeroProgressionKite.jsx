@@ -1,9 +1,8 @@
 import { componentImages } from '../../config/images.js'
 import FullscreenHero from "../../components/ui/FullscreenHero.jsx"
-import { createPresetHeroSlides } from "../../lib/fullscreenHeroSlides.js"
 import { SEVEN_PLANS_DATA7 } from "./introData13"
 
-const { heroImg } = componentImages["sections/blogPage13/HeroProgressionKite.jsx"]
+const { heroImg, heroMobileImg } = componentImages["sections/blogPage13/HeroProgressionKite.jsx"]
 function HeroProgressionKite() {
   const { hero } = SEVEN_PLANS_DATA7
 
@@ -13,11 +12,14 @@ function HeroProgressionKite() {
       eyebrow={hero.location}
       title={`${hero.title} ${hero.highlight} ${hero.subtitle}`}
       subtitle={hero.description}
-      slides={createPresetHeroSlides('kite', {
-        desktop: [heroImg],
-        alt: 'Mancora kitesurf progression',
-        imageClassName: 'object-[52%_center] md:object-center',
-      })}
+      slides={[
+        {
+          desktopSrc: heroImg,
+          mobileSrc: heroMobileImg,
+          alt: 'Mancora kitesurf progression',
+          imageClassName: 'object-[52%_center] md:object-center',
+        },
+      ]}
       contentClassName="max-w-3xl md:max-w-4xl"
     />
   )

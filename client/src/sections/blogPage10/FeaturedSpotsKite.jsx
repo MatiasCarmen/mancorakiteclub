@@ -3,7 +3,7 @@ import { resolveImage } from "../../config/images.js";
 
 const FEATURED_SPOT_IMAGES = [
     resolveImage("fotos mancora y mas/DSC07164.webp"),
-    resolveImage("imagenes-home/posicion18.jpg"),
+    resolveImage("fotos mancora y mas/DSC05866.webp"),
     resolveImage("fotos clases/DSC09584.webp"),
 ];
 

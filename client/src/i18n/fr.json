@@ -8,6 +8,7 @@
     "blog": "Blog",
     "contact": "Contact",
     "reviews": "Avis",
+    "faq": "FAQ",
     "bookNow": "Réserver maintenant"
   },
   "hero": {
@@ -257,7 +258,15 @@
     "staySummary": "Résumé du Séjour",
     "checkIn": "Arrivée",
     "checkOut": "Départ",
-    "duration": "Durée"
+    "duration": "Durée",
+    "buildEstimate": "Construire l'estimation",
+    "estimatedTotal": "Total estimé",
+    "estimated": "Estimé",
+    "nights": "Nuits",
+    "night": "nuit",
+    "guests": "Personnes",
+    "person": "personne",
+    "people": "personnes"
   },
   "stay": {
     "heroLabel": "Hébergement",
